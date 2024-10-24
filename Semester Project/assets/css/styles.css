@@ -71,3 +71,27 @@ h1 {
 .pt-5 {
     padding-top: 5rem !important;
 }
+
+/* Quiz Content */
+h1 {
+    font-family: "Didact Gothic", sans-serif;
+    color: #A9A9A9;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 20px 0;
+}
+
+/* quiz */
+.quiz-box {
+    background-color: #eeeeee;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 500px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}

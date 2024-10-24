@@ -61,7 +61,7 @@ window.onload = function () {
 
     quizData.forEach((item, index) => {
         const questionBlock = document.createElement('div');
-        questionBlock.classList.add('mb-3');
+        questionBlock.classList.add('mb-3', 'quiz-box'); // Add quiz-box class for styling
 
         // Add question title
         const questionTitle = document.createElement('label');
