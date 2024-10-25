@@ -2,10 +2,10 @@ const quizData = [
     {
         question: "How would you describe your skin type?",
         answers: [
-            { text: "Normal" },
-            { text: "Oily" },
-            { text: "Dry" },
-            { text: "Combination" },
+            { text: "Normal", category: "normal" },
+            { text: "Oily", category: "oily" },
+            { text: "Dry", category: "dry" },
+            { text: "Combination", category: "combination" },
         ],
     },
     {
@@ -107,7 +107,7 @@ window.onload = function () {
             quizResults += `${item.question}: ${answer}\n`;
         });
 
-        console.log(quizResults); // You can handle the quiz results here
+        console.log(quizResults); // quiz results will be handled later
         alert('Quiz submitted! Check the console for results.');
     });
 };
