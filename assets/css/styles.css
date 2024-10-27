@@ -1,0 +1,102 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: #F8E4CD;
+    color: #000;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    width: 100px;
+    height: 50px;
+    font-family: Georgia, serif;
+    font-size: 16px;
+}
+
+/* Quiz Content */
+h1 {
+    font-family: "Didact Gothic", sans-serif;
+    color: #A9A9A9;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 20px 0;
+}
+
+.start-box {
+    background-color: #eeeeee;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    padding: 20px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.start-btn {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
+    font-family: Georgia, serif;
+    font-size: 16px;
+}
+
+.product-image {
+    width: 250px;
+    height: 350px;
+    border-radius: 25px;
+}
+
+/* Responsive Fix */
+.mt-5 {
+    margin-top: 5rem !important;
+}
+
+.pt-5 {
+    padding-top: 5rem !important;
+}
+
+/* Quiz Content */
+h1 {
+    font-family: "Didact Gothic", sans-serif;
+    color: #A9A9A9;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 20px 0;
+}
+
+.quiz-box {
+    background-color: #eeeeee;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    padding: 20px;
+    margin: 20px 0;
+    width: 500px; 
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#quiz-questions {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
