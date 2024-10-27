@@ -59,9 +59,10 @@ const quizData = [
 window.onload = function () {
     const quizContainer = document.getElementById('quiz-questions');
 
+    // Generate quiz questions
     quizData.forEach((item, index) => {
         const questionBlock = document.createElement('div');
-        questionBlock.classList.add('mb-3', 'quiz-box'); // Add quiz-box class for styling
+        questionBlock.classList.add('mb-3', 'quiz-box');
 
         // Add question title
         const questionTitle = document.createElement('label');
@@ -79,7 +80,7 @@ window.onload = function () {
             answerInput.name = `question-${index}`;
             answerInput.value = answer.text;
             answerInput.classList.add('form-check-input');
-            answerInput.required = true; // Ensure the user selects an answer
+            answerInput.required = true;
 
             const answerLabel = document.createElement('label');
             answerLabel.classList.add('form-check-label');
@@ -98,16 +99,11 @@ window.onload = function () {
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const formData = new FormData(form);
-        const name = formData.get('name');
-        let quizResults = `Name: ${name}\n`;
+        const name = document.getElementById('name').value;
 
-        quizData.forEach((item, index) => {
-            const answer = formData.get(`question-${index}`);
-            quizResults += `${item.question}: ${answer}\n`;
-        });
+        localStorage.setItem("userName", name);
 
-        console.log(quizResults); // quiz results will be handled later
+        console.log(quizResults); // You can handle the quiz results here
         alert('Quiz submitted! Check the console for results.');
     });
 };
