@@ -28,6 +28,18 @@ body {
     font-size: 16px;
 }
 
+/* Buttons in Navbar */
+.teens, .adults {
+    background-color: #343a40;
+    color: #ffffff;
+    border: 1px solid #343a40; 
+}
+
+.teens:hover, .adults:hover {
+    background-color: #495057;
+    color: #ffffff;
+}
+
 /* Quiz Content */
 h1 {
     font-family: "Didact Gothic", Georgia, sans-serif;
