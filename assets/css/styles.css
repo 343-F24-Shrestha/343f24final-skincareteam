@@ -102,3 +102,27 @@ h1 {
     flex-direction: column; 
     align-items: center; 
 }
+
+/* Media Query for Mobile Devices */
+@media (max-width: 420px) {
+    .start-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .start-btn {
+        width: 100%; 
+        font-size: 14px;
+    }
+
+    .products {
+        flex-direction: column; 
+        gap: 20px; 
+        align-items: center;
+    }
+
+    .product-image {
+        width: 80%; 
+        height: auto; 
+    }
+}
