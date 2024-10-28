@@ -29,14 +29,18 @@ body {
 }
 
 /* Buttons in Navbar */
-.teens, .adults, .home {
+.teens,
+.adults,
+.home {
     background-color: #212529;
     color: #ffffff;
-    border: 1px solid #212529; 
+    border: 1px solid #212529;
 }
 
-.teens:hover, .adults:hover, .home:hover {
-    background-color: #212529; 
+.teens:hover,
+.adults:hover,
+.home:hover {
+    background-color: #212529;
 }
 
 h1 {
@@ -99,7 +103,7 @@ h1 {
     border-radius: 25px;
     padding: 20px;
     margin: 20px 0;
-    width: 500px; 
+    width: 500px;
     min-height: 150px;
     display: flex;
     flex-direction: column;
@@ -109,10 +113,30 @@ h1 {
 
 #quiz-questions {
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column;
+    align-items: center;
     text-align: left;
     padding: 10px;
+}
+
+/* External Links Styling */
+.resource-box {
+    background-color: #eeeeee;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.resource-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resource-box a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* Media query for small screens */
@@ -123,28 +147,32 @@ h1 {
     }
 
     .start-btn {
-        width: 100%; 
+        width: 100%;
         font-size: 14px;
     }
 
     .products {
-        flex-direction: column; 
-        gap: 20px; 
+        flex-direction: column;
+        gap: 20px;
         align-items: center;
     }
 
     .product-image {
-        width: 80%; 
-        height: auto; 
+        width: 80%;
+        height: auto;
     }
 
     .product-image:nth-child(2) {
         display: none;
     }
+
     .quiz-box {
-        width: 90%; 
+        width: 90%;
         padding: 15px;
         min-height: 200px;
         border-radius: 20px;
+    }
+    .resource-box {
+        width: 90%;
     }
 }
