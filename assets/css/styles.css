@@ -129,4 +129,10 @@ h1 {
     .product-image:nth-child(2) {
         display: none;
     }
+    .quiz-box {
+        width: 90%; 
+        padding: 15px;
+        min-height: 200px;
+        border-radius: 20px;
+    }
 }
