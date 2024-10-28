@@ -45,6 +45,7 @@ const quizData = [
         ],
     },
     {
+        // This question will later be answered in checkbox style
         question: "What skincare products do you currently use?",
         answers: [
             { text: "Cleanser" },
@@ -53,6 +54,7 @@ const quizData = [
             { text: "Serum" },
             { text: "Exfoliant" },
         ],
+        // More questions will be added later
     },
 ];
 
@@ -125,5 +127,7 @@ window.onload = function () {
 
         // Redirect to results page
         window.location.href = 'results.html';
+
+        // quiz results will be handled properly later
     });
 };

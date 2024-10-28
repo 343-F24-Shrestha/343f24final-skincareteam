@@ -35,7 +35,6 @@ body {
     border: 1px solid #212529; 
 }
 
-/* Remove hover effect */
 .teens:hover, .adults:hover, .home:hover {
     background-color: #212529; 
 }
@@ -116,7 +115,7 @@ h1 {
     padding: 10px;
 }
 
-/* Media query for mobile Devices */
+/* Media query for small screens */
 @media (max-width: 500px) {
     .start-box {
         width: 90%;
