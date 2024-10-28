@@ -38,7 +38,6 @@ body {
 /* Remove hover effect */
 .teens:hover, .adults:hover, .home:hover {
     background-color: #212529; 
-    color: #ffffff; 
 }
 
 /* Quiz Content */
