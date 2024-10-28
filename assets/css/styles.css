@@ -142,6 +142,10 @@ h1 {
     font-weight: bold;
 }
 
+.resource-box a:hover {
+    text-decoration: underline;
+}
+
 /* Media query for small screens */
 @media (max-width: 500px) {
     .start-box {
