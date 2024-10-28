@@ -125,4 +125,8 @@ h1 {
         width: 80%; 
         height: auto; 
     }
+
+    .product-image:nth-child(2) {
+        display: none;
+    }
 }
