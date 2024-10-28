@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Georgia, serif;
+    font-family: Georgia, "Merriweather", serif;
     background-color: #F8E4CD;
     color: #000;
     height: 100vh;
@@ -30,15 +30,11 @@ body {
 
 /* Quiz Content */
 h1 {
-    font-family: "Didact Gothic", sans-serif;
+    font-family: "Didact Gothic", "Merriweather", sans-serif;
     color: #A9A9A9;
     font-weight: bold;
     font-size: 22px;
     margin: 20px 0;
-}
-
-.products {
-    gap: 60px;
 }
 
 .start-box {
@@ -57,7 +53,7 @@ h1 {
     border-radius: 25px;
     width: 200px;
     height: 50px;
-    font-family: Georgia, serif;
+    font-family: Georgia, "Merriweather", serif;
     font-size: 16px;
 }
 
@@ -78,7 +74,7 @@ h1 {
 
 /* Quiz Content */
 h1 {
-    font-family: "Didact Gothic", sans-serif;
+    font-family: "Didact Gothic", "Merriweather", sans-serif;
     color: #A9A9A9;
     font-weight: bold;
     font-size: 22px;
