@@ -2,10 +2,10 @@ const quizData = [
     {
         question: "How would you describe your skin type?",
         answers: [
-            { text: "Normal"},
-            { text: "Oily"},
-            { text: "Dry"},
-            { text: "Combination"},
+            { text: "Normal" },
+            { text: "Oily" },
+            { text: "Dry" },
+            { text: "Combination" },
         ],
     },
     {
@@ -58,6 +58,7 @@ const quizData = [
 
 window.onload = function () {
     const quizContainer = document.getElementById('quiz-questions');
+    const form = document.getElementById('quiz-form');
 
     // Generate quiz questions
     quizData.forEach((item, index) => {
@@ -71,7 +72,7 @@ window.onload = function () {
         questionBlock.appendChild(questionTitle);
 
         // Add answer options
-        item.answers.forEach((answer, i) => {
+        item.answers.forEach((answer) => {
             const answerWrapper = document.createElement('div');
             answerWrapper.classList.add('form-check');
 
@@ -94,12 +95,10 @@ window.onload = function () {
         quizContainer.appendChild(questionBlock);
     });
 
-    // Handle form submission
-    const form = document.getElementById('quiz-form');
-
     // Regex for name validation
     const nameRegex = /^[A-Za-zÀ-ÿ'’\- ]{1,50}$/;
 
+    // Handle form submission
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
@@ -112,6 +111,19 @@ window.onload = function () {
         }
         localStorage.setItem("userName", name);
 
-        // Will handle the quiz results here
+        // Collect quiz results
+        const quizResults = {};
+        for (let i = 0; i < quizData.length; i++) {
+            const selectedAnswer = document.querySelector(`input[name="question-${i}"]:checked`);
+            if (selectedAnswer) {
+                quizResults[`question-${i}`] = selectedAnswer.value;
+            }
+        }
+
+        // Save quiz results to localStorage
+        localStorage.setItem("quizResults", JSON.stringify(quizResults));
+
+        // Redirect to results page
+        window.location.href = 'results.html';
     });
 };

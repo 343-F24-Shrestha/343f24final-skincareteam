@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Menu</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -30,13 +33,35 @@
         </div>
     </nav>
 
-    <!--Main Content-->
-    <div class="container mt-5">
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
         <h1>Welcome to the Results Page</h1>
-        <p>This page will give results based on the quiz.</p>
+        <div id="results" class="mt-4"></div>
     </div>
 
     <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Retrieve data from localStorage
+        const userName = localStorage.getItem("userName");
+        const quizResults = JSON.parse(localStorage.getItem("quizResults"));
+
+        // Display user's name
+        const resultsDiv = document.getElementById("results");
+        if (userName) {
+            resultsDiv.innerHTML += `<h3>Hello, ${userName}!</h3>`;
+        } else {
+            resultsDiv.innerHTML += `<h3>Hello!</h3>`;
+        }
+        // Display quiz results
+        if (quizResults) {
+            resultsDiv.innerHTML += `<h4>Your Quiz Results:</h4>`;
+            Object.keys(quizResults).forEach((question, index) => {
+                resultsDiv.innerHTML += `<p><strong>${question}:</strong> ${quizResults[question]}</p>`;
+            });
+        } else {
+            resultsDiv.innerHTML += `<p>No quiz results found.</p>`;
+        }
+    </script>
 </body>
 </html>
