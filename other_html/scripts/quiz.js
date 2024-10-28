@@ -45,7 +45,7 @@ const quizData = [
         ],
     },
     {
-        question: "What skincare products do you currently use? (Select all that apply)",
+        question: "What skincare products do you currently use?",
         answers: [
             { text: "Cleanser" },
             { text: "Moisturizer" },
@@ -103,7 +103,7 @@ window.onload = function () {
 
         localStorage.setItem("userName", name);
 
-        console.log(quizResults); // You can handle the quiz results here
+        console.log(quizResults); // Will handle the quiz results here
         alert('Quiz submitted! Check the console for results.');
     });
 };
