@@ -2,10 +2,10 @@ const quizData = [
     {
         question: "How would you describe your skin type?",
         answers: [
-            { text: "Normal", category: "normal" },
-            { text: "Oily", category: "oily" },
-            { text: "Dry", category: "dry" },
-            { text: "Combination", category: "combination" },
+            { text: "Normal"},
+            { text: "Oily"},
+            { text: "Dry"},
+            { text: "Combination"},
         ],
     },
     {
@@ -96,14 +96,22 @@ window.onload = function () {
 
     // Handle form submission
     const form = document.getElementById('quiz-form');
+
+    // Regex for name validation
+    const nameRegex = /^[A-Za-zÀ-ÿ'’\- ]{1,50}$/;
+
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
         const name = document.getElementById('name').value;
 
+        // Validate name input
+        if (!nameRegex.test(name)) {
+            alert("Please enter a valid name: 1-50 characters, letters, spaces, apostrophes, and hyphens only.");
+            return;
+        }
         localStorage.setItem("userName", name);
 
-        console.log(quizResults); // Will handle the quiz results here
-        alert('Quiz submitted! Check the console for results.');
+        // Will handle the quiz results here
     });
 };
