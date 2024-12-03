@@ -17,6 +17,7 @@ body {
 }
 
 /* Button Styles */
+
 .btn {
     background-color: #000000;
     color: #FFFFFF;
@@ -29,6 +30,7 @@ body {
 }
 
 /* Buttons in Navbar */
+
 .teens,
 .adults,
 .home {
@@ -45,9 +47,9 @@ body {
 
 h1 {
     font-family: "Didact Gothic", Georgia, sans-serif;
-    color: #A9A9A9;
+    color: #000;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 30px;
     margin: 20px 0;
 }
 
@@ -89,13 +91,6 @@ h1 {
 }
 
 /* Quiz Content */
-h1 {
-    font-family: "Didact Gothic", Georgia, sans-serif;
-    color: #A9A9A9;
-    font-weight: bold;
-    font-size: 28px;
-    margin: 20px 0;
-}
 
 .quiz-box {
     background-color: #eeeeee;
