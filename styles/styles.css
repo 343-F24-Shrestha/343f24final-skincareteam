@@ -9,7 +9,7 @@ h1 {
     font-family: "Didact Gothic", Georgia, sans-serif;
     color: #716c6c;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 50px;
     margin: 20px 0;
 }
 
@@ -22,6 +22,12 @@ body {
 
 .container {
     text-align: center;
+}
+
+/* Image Styles */
+
+img {
+    margin: 0px;
 }
 
 /* Button Styles */
@@ -53,26 +59,18 @@ body {
     background-color: #212529;
 }
 
-.start-box {
-    background-color: #eeeeee;
-    border: 1px solid #000000;
-    border-radius: 25px;
-    padding: 40px;
-    display: inline-block;
-    margin-bottom: 30px;
-    width: 300px;
-    text-align: center;
-}
+/* Start button styles */
 
 .start-btn {
     background-color: #000000;
     color: #FFFFFF;
     border: 1px solid #000000;
-    border-radius: 25px;
-    width: 200px;
-    height: 50px;
+    border-radius: 50px;
+    width: 250px;
+    height: 100px;
     font-family: Georgia, serif;
-    font-size: 16px;
+    font-size: 30px;
+    margin: 30px;
 }
 
 .product-image {
@@ -82,6 +80,7 @@ body {
 }
 
 /* Responsive Fix */
+
 .mt-5 {
     margin-top: 5rem !important;
 }
@@ -119,7 +118,7 @@ body {
 .resource-box {
     background-color: #eeeeee;
     border: 1px solid #000000;
-    border-radius: 10px;
+    border-radius: 25px;
     padding: 10px;
     margin-top: 20px;
     width: 250px;
@@ -186,11 +185,15 @@ body {
 
 /* Teens and adults skin info */
 
-.info-boxes p {
+.info-boxes {
     background-color: #eeeeee;;
     border: 1px solid #000000;
-    border-radius: 10px; 
-    padding: 15px; 
-    margin: 10px 0;
+    border-radius: 25px; 
+    padding: 25px; 
+    margin: 15px;
     text-align: left;
+}
+
+.info-boxes h1 {
+    text-align: center;
 }
