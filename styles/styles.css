@@ -144,6 +144,17 @@ img {
     text-decoration: underline;
 }
 
+/* Media query for medium screens */
+
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 35px;
+    }
+    .product-image:nth-child(1), .product-image:nth-child(4) {
+        display: none;
+    } 
+}
+
 /* Media query for small screens */
 
 @media (max-width: 500px) {
