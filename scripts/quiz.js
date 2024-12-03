@@ -6,7 +6,7 @@ window.onload = function () {
 
     // Handle form submission
     form.addEventListener("submit", function (event) {
-        event.preventDefault();
+        event.preventDefault(); // Prevent the default form submission behavior
 
         const name = document.getElementById("name").value;
 
@@ -16,15 +16,13 @@ window.onload = function () {
             return;
         }
 
-        // Save user name
-        localStorage.setItem("userName", name);
-
         // Collect quiz results
         const quizResults = {
+            name: name,
             skinType: getSelectedValue("skin-type"),
             primaryConcern: document.getElementById("primary-concern").value,
             sensitivity: getSelectedValue("sensitivity"),
-            currentProducts: getSelectedCheckboxes("current-products"),
+            currentProducts: getSelectedCheckboxes("current-products").join(", "), // Convert array to string
         };
 
         if (!quizResults.primaryConcern) {
@@ -34,9 +32,11 @@ window.onload = function () {
 
         // Save results to localStorage
         localStorage.setItem("quizResults", JSON.stringify(quizResults));
+        localStorage.setItem("userName", name);
 
-        // Redirect to results page
-        window.location.href = "results.html";
+        // Redirect to results page with query parameters
+        const queryParams = new URLSearchParams(quizResults).toString();
+        window.location.href = `results.html?${queryParams}`;
     });
 
     // Utility to get selected radio button value
