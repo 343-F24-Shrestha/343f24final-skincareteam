@@ -203,9 +203,12 @@ img {
     .resource-box {
         width: 90%;
     }
+    .start-btn {
+        width: 90%;
+    }
 }
 
-/* Teens and adults skin info */
+/* Teens and adults skin info box styling */
 
 .info-boxes {
     background-color: #eeeeee;;
