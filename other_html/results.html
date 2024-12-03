@@ -83,7 +83,7 @@
 
         // Function to fetch product recommendations from ASIN API
         async function fetchRecommendations(searchTerm) {
-            const apiKey = "DB4E5A4AAA024F44BEBAF9E24008CF54"; // Replace with ASIN API key
+            const apiKey = "DB4E5A4AAA024F44BEBAF9E24008CF54(so we dont run out remove me)"; // Replace with ASIN API key
             const url = `https://api.asindataapi.com/request?api_key=${apiKey}&type=search&amazon_domain=amazon.com&search_term=${encodeURIComponent(
                 searchTerm
             )}&sort_by=average_review`;
@@ -121,7 +121,7 @@
                             <img src="${product.image}" class="card-img-top" alt="${product.title}">
                             <div class="card-body">
                                 <h5 class="card-title">${product.title}</h5>
-                                <p class="card-text">Price: ${product.price ? product.price.current_price : "N/A"}</p>
+                                <p class="card-text">Price: ${product.price ? product.price.raw : "not avaliable"}</p>
                                 <a href="${product.link}" class="btn btn-primary" target="_blank">View on Amazon</a>
                             </div>
                         </div>
