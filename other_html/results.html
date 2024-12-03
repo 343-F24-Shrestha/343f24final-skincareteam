@@ -121,7 +121,7 @@
                             <img src="${product.image}" class="card-img-top" alt="${product.title}">
                             <div class="card-body">
                                 <h5 class="card-title">${product.title}</h5>
-                                <p class="card-text">Price: ${product.price ? product.price.current_price : "N/A"}</p>
+                                <p class="card-text">Price: ${product.price ? product.price.raw : "not avaliable"}</p>
                                 <a href="${product.link}" class="btn btn-primary" target="_blank">View on Amazon</a>
                             </div>
                         </div>
