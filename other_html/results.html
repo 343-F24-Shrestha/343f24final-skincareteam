@@ -37,6 +37,10 @@
     <div class="container mt-5 pt-5">
         <h1>Welcome to the Results Page</h1>
         <div id="results" class="mt-4"></div>
+        <div id="recommendations" class="mt-5">
+            <h4>Recommended Products</h4>
+            <div id="products-list" class="row mt-3"></div>
+        </div>
     </div>
 
     <!-- Bootstrap JS -->
@@ -46,14 +50,14 @@
         const userName = localStorage.getItem("userName");
         const quizResults = JSON.parse(localStorage.getItem("quizResults"));
 
-        // Display user's name
+        // Display user's name and quiz results
         const resultsDiv = document.getElementById("results");
         if (userName) {
             resultsDiv.innerHTML += `<h3>Hello, ${userName}!</h3>`;
         } else {
             resultsDiv.innerHTML += `<h3>Hello!</h3>`;
         }
-        // Display quiz results
+
         if (quizResults) {
             resultsDiv.innerHTML += `<h4>Your Quiz Results:</h4>`;
             Object.keys(quizResults).forEach((question, index) => {
@@ -62,6 +66,93 @@
         } else {
             resultsDiv.innerHTML += `<p>No quiz results found.</p>`;
         }
+
+        // Function to map quiz results to Amazon search terms
+        function mapQuizToSearchTerms(quizResults) {
+            const searchTerms = [];
+            if (quizResults.skinType) searchTerms.push(quizResults.skinType + " skincare");
+            if (quizResults.primaryConcern) searchTerms.push(quizResults.primaryConcern + " treatment");
+            if (quizResults.sensitivity) searchTerms.push(quizResults.sensitivity + " products");
+            if (quizResults.currentProducts) {
+                quizResults.currentProducts.split(", ").forEach((product) => {
+                    searchTerms.push(product + " skincare");
+                });
+            }
+            return searchTerms;
+        }
+
+        // Function to fetch product recommendations from ASIN API
+        async function fetchRecommendations(searchTerm) {
+            const apiKey = "DB4E5A4AAA024F44BEBAF9E24008CF54"; // Replace with ASIN API key
+            const url = `https://api.asindataapi.com/request?api_key=${apiKey}&type=search&amazon_domain=amazon.com&search_term=${encodeURIComponent(
+                searchTerm
+            )}&sort_by=average_review`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data && data.search_results) {
+                    return data.search_results;
+                } else {
+                    console.error("No results found for search term:", searchTerm);
+                    return [];
+                }
+            } catch (error) {
+                console.error("Error fetching recommendations:", error);
+                return [];
+            }
+        }
+
+        // Function to render product recommendations
+        function renderRecommendations(products) {
+            const productsList = document.getElementById("products-list");
+            productsList.innerHTML = ""; // Clear existing content
+
+            if (products.length === 0) {
+                productsList.innerHTML = `<p>No recommendations available at the moment.</p>`;
+                return;
+            }
+
+            products.forEach((product) => {
+                const productCard = `
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="${product.image}" class="card-img-top" alt="${product.title}">
+                            <div class="card-body">
+                                <h5 class="card-title">${product.title}</h5>
+                                <p class="card-text">Price: ${product.price ? product.price.current_price : "N/A"}</p>
+                                <a href="${product.link}" class="btn btn-primary" target="_blank">View on Amazon</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                productsList.innerHTML += productCard;
+            });
+        }
+
+        // Main function to display recommendations
+        async function displayRecommendations() {
+            if (!quizResults) return;
+
+            const searchTerms = mapQuizToSearchTerms(quizResults);
+            const allProducts = [];
+
+            for (const term of searchTerms) {
+                const products = await fetchRecommendations(term);
+                allProducts.push(...products);
+            }
+
+            // Limit the results to the first 5 products
+            const topProducts = allProducts.slice(0, 5);
+
+            // Render the product recommendations
+            renderRecommendations(topProducts);
+        }
+
+        // Call the function to display recommendations
+        displayRecommendations();
     </script>
 </body>
+
 </html>
