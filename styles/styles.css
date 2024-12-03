@@ -27,7 +27,7 @@ body {
 /* Image Styles */
 
 img {
-    margin: 0px;
+    max-height: 250px;
 }
 
 /* Button Styles */
@@ -147,6 +147,9 @@ img {
 /* Media query for small screens */
 
 @media (max-width: 500px) {
+    h1 {
+        font-size: 35px;
+    }
     .start-box {
         width: 90%;
         padding: 20px;
@@ -154,7 +157,7 @@ img {
 
     .start-btn {
         width: 100%;
-        font-size: 14px;
+        font-size: 25px;
     }
 
     .products {
@@ -168,8 +171,13 @@ img {
         height: auto;
     }
 
-    .product-image:nth-child(2) {
+    .product-image:nth-child(1), .product-image:nth-child(2), .product-image:nth-child(4) {
         display: none;
+    } 
+
+    .product-image {
+        max-width: 300px;
+        max-height: 300px;
     }
 
     .quiz-box {
