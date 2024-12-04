@@ -18,9 +18,8 @@ window.onload = function () {
 
         // Collect quiz results
         const quizResults = {
-            name: name,
             skinType: getSelectedValue("skin-type"),
-            primaryConcern: getSelectedValue("primary-concern"),
+            primaryConcern: document.getElementById("primary-concern").value,
             sensitivity: getSelectedValue("sensitivity"),
             environment: getSelectedValue("environment"),
         };

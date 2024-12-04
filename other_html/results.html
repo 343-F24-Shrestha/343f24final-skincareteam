@@ -35,7 +35,6 @@
 
     <!-- Main Content -->
     <div class="container mt-5 pt-5">
-        <h1>Your Results:</h1>
         <div id="results" class="mt-4"></div>
         <div id="recommendations" class="mt-5">
             <h4>Recommended Products</h4>
@@ -65,6 +64,97 @@
             });
         } else {
             resultsDiv.innerHTML += `<p>No quiz results found.</p>`;
+        }
+
+        // Function to get the selected value of Question 1 and display a recommendation
+        function displayQuizQuestion1Results() {
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = '<h2>How would you describe your skin?</h2>';
+
+            if (quizResults) {
+                const firstQuestionKey = Object.keys(quizResults)[0];
+                const firstQuestionValue = quizResults[firstQuestionKey];
+
+                resultsDiv.innerHTML += `<p><strong>Your answer: </strong>${firstQuestionValue}</p>`;
+
+                switch (firstQuestionValue) {
+                    case "Normal":
+                        resultsDiv.innerHTML += `<p>Your skin is balanced, so you should focus on maintaining hydration and using lightweight, non-greasy products to keep your skin healthy.</p>`;
+                        break;
+                    case "Oily":
+                        resultsDiv.innerHTML += `<p>For oily skin, it's best to use oil-control products, mattifying moisturizers, and products with salicylic acid to help manage shine and reduce breakouts.</p>`;
+                        break;
+                    case "Dry":
+                        resultsDiv.innerHTML += `<p>Dry skin benefits from hydrating and moisturizing products, such as creams containing hyaluronic acid and ceramides, to help retain moisture and keep your skin smooth.</p>`;
+                        break;
+                    case "Combination":
+                        resultsDiv.innerHTML += `<p>Combination skin requires a balanced approach. Use lightweight, oil-free products on the oily areas and richer moisturizers on the dry areas to maintain harmony.</p>`;
+                        break;
+                    default:
+                        resultsDiv.innerHTML += `<p>We recommend choosing a skin type to get personalized advice!</p>`;
+                        break;
+                }
+            } else {
+                resultsDiv.innerHTML += `<p>No quiz results found.</p>`;
+            }
+        }
+        displayQuizQuestion1Results();
+
+        // Function to get the selected value of Question 2 and display a recommendation
+        function displayQuizQuestion2Results() {
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML += '<h2>What is your primary skin concern?</h2>';
+
+            if (quizResults) {
+                const secondQuestionKey = Object.keys(quizResults)[1];
+                const secondQuestionValue = quizResults[secondQuestionKey];
+
+                resultsDiv.innerHTML += `<p><strong>Your answer: </strong>${secondQuestionValue}</p>`;
+
+                switch (secondQuestionValue) {
+                    case "Acne":
+                        resultsDiv.innerHTML += `<p>For acne or acne marks, consider products with ingredients like salicylic acid, benzoyl peroxide, or retinol to target blemishes and help fade marks. Products with niacinamide can also help reduce redness and improve overall skin tone.</p>`;
+                        break;
+                    case "Anti-aging":
+                        resultsDiv.innerHTML += `<p>For anti-aging, look for products containing retinoids, peptides, and antioxidants like vitamin C. Hyaluronic acid and ceramides can also help maintain skin elasticity and hydration, reducing the appearance of fine lines and wrinkles.</p>`;
+                        break;
+                    case "Dryness":
+                        resultsDiv.innerHTML += `<p>For dryness or flaky skin, opt for rich moisturizers with ingredients like hyaluronic acid, ceramides, and shea butter. Avoid harsh cleansers, and consider using a gentle exfoliant to remove flaky skin while keeping it hydrated.</p>`;
+                        break;
+                    case "Texture":
+                        resultsDiv.innerHTML += `<p>For improving skin texture, look for products containing exfoliating ingredients such as alpha hydroxy acids (AHAs) like glycolic acid or beta hydroxy acids (BHAs) like salicylic acid. These can smooth the skin's surface and promote cell turnover.</p>`;
+                        break;
+                    default:
+                        resultsDiv.innerHTML += `<p>We recommend choosing a skin concern to get personalized advice!</p>`;
+                        break;
+                }
+            }
+        }
+        displayQuizQuestion2Results();
+
+        // Function to get the selected value of question 3 and display a recommendation
+        function displayQuizQuestion3Results() {
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML += '<h2>Is your skin sensitive?</h2>';
+
+            if (quizResults) {
+                const thirdQuestionKey = Object.keys(quizResults)[2];
+                const thirdQuestionValue = quizResults[thirdQuestionKey];
+
+                resultsDiv.innerHTML += `<p><strong>Your answer: </strong>${thirdQuestionValue}</p>`;
+
+                switch (secondQuestionValue) {
+                    case "Yes":
+                        resultsDiv.innerHTML += ''
+                        break;
+                    case "No":
+                        resultsDiv.innerHTML += ''
+                        break;
+                    default:
+                        resultsDiv.innerHTML += `<p>We recommend choosing a skin concern to get personalized advice!</p>`;
+                        break;
+                }
+            }
         }
 
         // Function to map quiz results to Amazon search terms
