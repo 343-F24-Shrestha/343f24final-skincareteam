@@ -73,6 +73,18 @@ img {
     margin: 30px;
 }
 
+ .submit-btn{
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    width: 250px;
+    height: 100px;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    margin: 20px auto;
+ }
+
 .product-image {
     width: 250px;
     height: 350px;
