@@ -20,9 +20,18 @@ window.onload = function () {
         const quizResults = {
             name: name,
             skinType: getSelectedValue("skin-type"),
-            primaryConcern: document.getElementById("primary-concern").value,
+            primaryConcern: getSelectedValue("primary-concern"),
             sensitivity: getSelectedValue("sensitivity"),
             currentProducts: getSelectedCheckboxes("current-products").join(", "), // Convert array to string
+            age: getSelectedValue("age"),
+            breakouts: getSelectedValue("breakouts"),
+            meds: getSelectedValue("meds"),
+            waterIntake: getSelectedValue("water-intake"),
+            environment: getSelectedValue("environment"),
+            routineTime: getSelectedValue("routine-time"),
+            diet: getSelectedValue("diet"),
+            sleep: getSelectedValue("sleep"),
+            pollution: getSelectedValue("pollution")
         };
 
         if (!quizResults.primaryConcern) {
