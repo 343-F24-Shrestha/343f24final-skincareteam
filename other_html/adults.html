@@ -88,7 +88,8 @@
         <h3>Helpful Resources:</h3>
         <div class="resource-box">
             <ul>
-                <li><a href="https://www.nia.nih.gov/health/skin-care/skin-care-and-aging">National Institute on Aging</a></li>
+                <li><a href="https://www.nia.nih.gov/health/skin-care/skin-care-and-aging">National Institute on
+                        Aging</a></li>
                 <li><a
                         href="https://www.aad.org/public/everyday-care/skin-care-secrets/anti-aging/selecting-anti-aging-products">American
                         Academy of Dermatology Association</a></li>
@@ -105,7 +106,7 @@
     <script>
         async function fetchDermatologyFacts() {
             const factListElement = document.getElementById('fact-list');
-    
+
             const url = 'https://infinite-gpt.p.rapidapi.com/infinite-gpt';
             const options = {
                 method: 'POST',
@@ -119,11 +120,11 @@
                     sysMsg: 'You are a friendly Chatbot.'
                 })
             };
-    
+
             try {
                 const response = await fetch(url, options);
                 const result = await response.json(); // Parse the JSON response
-    
+
                 if (result.clientError === false) {
                     // Split the facts from the "msg" field by line breaks and display them
                     const facts = result.msg.split("\n\n").map(fact => `<ol>${fact.trim()}</ol>`).join('');
@@ -136,7 +137,7 @@
                 factListElement.innerHTML = '<li>Sorry, there was an error fetching the facts.</li>';
             }
         }
-    
+
         // Call the function to fetch facts when the page loads
         fetchDermatologyFacts();
     </script>
