@@ -52,24 +52,20 @@
         // Display user's name and quiz results
         const resultsDiv = document.getElementById("results");
         if (userName) {
-            resultsDiv.innerHTML += `<h3>Hello, ${userName}!</h3>`;
+            resultsDiv.innerHTML += `<h1>Hello, ${userName}!</h1>`;
+            resultsDiv.innerHTML += `<h2>Your Quiz Results:</h2>`;
+            displayQuizQuestion1Results();
+            displayQuizQuestion2Results();
+            displayQuizQuestion3Results();
+            displayQuizQuestion4Results();
         } else {
             resultsDiv.innerHTML += `<h3>Hello!</h3>`;
-        }
-
-        if (quizResults) {
-            resultsDiv.innerHTML += `<h4>Your Quiz Results:</h4>`;
-            Object.keys(quizResults).forEach((question, index) => {
-                resultsDiv.innerHTML += `<p><strong>${question}:</strong> ${quizResults[question]}</p>`;
-            });
-        } else {
-            resultsDiv.innerHTML += `<p>No quiz results found.</p>`;
         }
 
         // Function to get the selected value of Question 1 and display a recommendation
         function displayQuizQuestion1Results() {
             const resultsDiv = document.getElementById("results");
-            resultsDiv.innerHTML = '<h2>How would you describe your skin?</h2>';
+            resultsDiv.innerHTML += '<h4>1. How would you describe your skin?</h4>';
 
             if (quizResults) {
                 const firstQuestionKey = Object.keys(quizResults)[0];
@@ -98,12 +94,11 @@
                 resultsDiv.innerHTML += `<p>No quiz results found.</p>`;
             }
         }
-        displayQuizQuestion1Results();
 
         // Function to get the selected value of Question 2 and display a recommendation
         function displayQuizQuestion2Results() {
             const resultsDiv = document.getElementById("results");
-            resultsDiv.innerHTML += '<h2>What is your primary skin concern?</h2>';
+            resultsDiv.innerHTML += '<h4>2. What is your primary skin concern?</h4>';
 
             if (quizResults) {
                 const secondQuestionKey = Object.keys(quizResults)[1];
@@ -130,12 +125,11 @@
                 }
             }
         }
-        displayQuizQuestion2Results();
 
         // Function to get the selected value of question 3 and display a recommendation
         function displayQuizQuestion3Results() {
             const resultsDiv = document.getElementById("results");
-            resultsDiv.innerHTML += '<h2>Is your skin sensitive?</h2>';
+            resultsDiv.innerHTML += '<h4>3. Is your skin sensitive?</h4>';
 
             if (quizResults) {
                 const thirdQuestionKey = Object.keys(quizResults)[2];
@@ -143,15 +137,40 @@
 
                 resultsDiv.innerHTML += `<p><strong>Your answer: </strong>${thirdQuestionValue}</p>`;
 
-                switch (secondQuestionValue) {
+                switch (thirdQuestionValue) {
                     case "Yes":
-                        resultsDiv.innerHTML += ''
+                        resultsDiv.innerHTML += `<p>Use fragrance-free and hypoallergenic products to avoid irritation. Look for calming ingredients like aloe vera, colloidal oatmeal, and chamomile. Always patch-test new products and protect your skin with a gentle mineral sunscreen.</p>`;
                         break;
                     case "No":
-                        resultsDiv.innerHTML += ''
+                        resultsDiv.innerHTML += `<p>While your skin may be resilient, avoid overusing harsh products. Incorporate active ingredients like retinoids or exfoliants gradually to maintain your skin's barrier. Regular hydration is key!</p>`;
                         break;
                     default:
-                        resultsDiv.innerHTML += `<p>We recommend choosing a skin concern to get personalized advice!</p>`;
+                        resultsDiv.innerHTML += `<p>We recommend selecting whether your skin is sensitive to get personalized advice!</p>`;
+                        break;
+                }
+            }
+        }
+
+        // Function to get the selected value of question 4 and display a recommendation
+        function displayQuizQuestion4Results() {
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML += '<h4>4. What is your environment like?</h4>';
+
+            if (quizResults) {
+                const fourthQuestionKey = Object.keys(quizResults)[3];
+                const fourthQuestionValue = quizResults[fourthQuestionKey];
+
+                resultsDiv.innerHTML += `<p><strong>Your answer: </strong>${fourthQuestionValue}</p>`;
+
+                switch (fourthQuestionValue) {
+                    case "Dry climate":
+                        resultsDiv.innerHTML += `<p>In dry environments, prioritize hydration with rich moisturizers containing ceramides, hyaluronic acid, and glycerin. Use a humidifier at home and protect your skin with occlusive products like balms or oils to lock in moisture.</p>`;
+                        break;
+                    case "Humid climate":
+                        resultsDiv.innerHTML += `<p>In humid climates, opt for lightweight, non-comedogenic products to avoid clogged pores. Gel-based moisturizers and water-based sunscreens are ideal. Incorporate a gentle cleanser to remove excess oil and sweat without stripping the skin.</p>`;
+                        break;
+                    default:
+                        resultsDiv.innerHTML += `<p>We recommend selecting a climate to get personalized advice!</p>`;
                         break;
                 }
             }
