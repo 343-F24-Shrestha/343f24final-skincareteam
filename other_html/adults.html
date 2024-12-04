@@ -32,7 +32,8 @@
             </div>
         </div>
     </nav>
-    <!--Main content-->
+
+    <!-- Main content -->
     <div class="container mt-5">
         <div class="info-boxes">
             <h1>Adult Skin</h1>
@@ -74,12 +75,20 @@
                 avoid harsh exfoliants or strong active ingredients unless recommended by a dermatologist.</p>
         </div>
 
+        <!-- Dermatology Facts Section -->
+        <div id="dermatology-facts" class="mt-4">
+            <h3>Did You Know?</h3>
+            <p>Here are some interesting dermatology facts:</p>
+            <ol id="fact-list">
+                <!-- Facts will be dynamically loaded here -->
+            </ol>
+        </div>
+
         <!-- External links -->
         <h3>Helpful Resources:</h3>
         <div class="resource-box">
             <ul>
-                <li><a href="https://www.nia.nih.gov/health/skin-care/skin-care-and-aging">National Institute on
-                        Aging</a></li>
+                <li><a href="https://www.nia.nih.gov/health/skin-care/skin-care-and-aging">National Institute on Aging</a></li>
                 <li><a
                         href="https://www.aad.org/public/everyday-care/skin-care-secrets/anti-aging/selecting-anti-aging-products">American
                         Academy of Dermatology Association</a></li>
@@ -91,6 +100,46 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Dermatology Facts API Script using Fetch -->
+    <script>
+        async function fetchDermatologyFacts() {
+            const factListElement = document.getElementById('fact-list');
+    
+            const url = 'https://infinite-gpt.p.rapidapi.com/infinite-gpt';
+            const options = {
+                method: 'POST',
+                headers: {
+                    'x-rapidapi-key': '50456afd9fmsh37523c1c6f02411p163164jsn1bdfb801f070',
+                    'x-rapidapi-host': 'infinite-gpt.p.rapidapi.com',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    query: 'Give me 5 one sentence interesting dermatology facts about adult skin care and aging in an ordered list.',
+                    sysMsg: 'You are a friendly Chatbot.'
+                })
+            };
+    
+            try {
+                const response = await fetch(url, options);
+                const result = await response.json(); // Parse the JSON response
+    
+                if (result.clientError === false) {
+                    // Split the facts from the "msg" field by line breaks and display them
+                    const facts = result.msg.split("\n\n").map(fact => `<ol>${fact.trim()}</ol>`).join('');
+                    factListElement.innerHTML = facts;
+                } else {
+                    factListElement.innerHTML = '<li>Sorry, there was an error fetching the facts.</li>';
+                }
+            } catch (error) {
+                console.error('Error fetching dermatology facts:', error);
+                factListElement.innerHTML = '<li>Sorry, there was an error fetching the facts.</li>';
+            }
+        }
+    
+        // Call the function to fetch facts when the page loads
+        fetchDermatologyFacts();
+    </script>
 </body>
 
 </html>
