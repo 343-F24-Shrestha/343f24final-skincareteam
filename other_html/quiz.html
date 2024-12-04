@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skin Type Quiz</title>
+    <title>Skin Quiz</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
@@ -47,9 +47,10 @@
 
                 <!-- Quiz Questions -->
                 <div id="quiz-questions" class="quiz-box">
+
                     <!-- Question 1 -->
                     <div class="mb-3">
-                        <label for="skin-type" class="form-label"><strong>1. How would you describe your
+                        <label for="skin-type" class="form-label"><strong>How would you describe your
                                 skin?</strong></label>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="skin-type" id="skin-type-normal"
@@ -80,20 +81,38 @@
 
                     <!-- Question 2 -->
                     <div class="mb-3">
-                        <label class="form-label"><strong>2. What is your primary skin concern?</strong></label>
-                        <select class="form-select" name="primary-concern" id="primary-concern" required>
-                            <option value="" disabled selected>Choose an option</option>
-                            <option value="Acne">Acne or acne marks</option>
-                            <option value="Anti-aging">Anti-aging</option>
-                            <option value="Dryness">Dryness or flaky skin</option>
-                            <option value="Texture">Skin texture</option>
-                            <option value="Dullness">Dullness</option>
-                        </select>
+                        <label class="form-label"><strong>What is your primary skin concern?</strong></label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="primary-concern" id="concern-acne"
+                                value="Acne" required>
+                            <label for="concern-acne" class="form-check-label">Acne or acne marks</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="primary-concern" id="concern-anti-aging"
+                                value="Anti-aging" required>
+                            <label for="concern-anti-aging" class="form-check-label">Anti-aging</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="primary-concern" id="concern-dryness"
+                                value="Dryness" required>
+                            <label for="concern-dryness" class="form-check-label">Dryness or flaky skin</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="primary-concern" id="concern-texture"
+                                value="Texture" required>
+                            <label for="concern-texture" class="form-check-label">Skin texture</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="primary-concern" id="concern-dullness"
+                                value="Dullness" required>
+                            <label for="concern-dullness" class="form-check-label">Dullness</label>
+                        </div>
                     </div>
+
 
                     <!-- Question 3 -->
                     <div class="mb-3">
-                        <label class="form-label"><strong>3. Is your skin sensitive?</strong></label>
+                        <label class="form-label"><strong>Is your skin sensitive?</strong></label>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="sensitivity" id="sensitive-yes"
                                 value="Yes" required>
@@ -113,7 +132,7 @@
 
                     <!-- Question 4 -->
                     <div class="mb-3">
-                        <label class="form-label"><strong>4. Which products do you currently use?</strong> (Select all
+                        <label class="form-label"><strong>Which products do you currently use?</strong> (Select all
                             that apply)</label>
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" name="current-products"
@@ -143,43 +162,220 @@
                     </div>
 
                     <!-- Question 5 -->
-
                     <div class="mb-3">
-                        <label class="form-label"><strong>5. What is your age group?</strong></label>
-                        <select class="form-select" name="age" id="age" required>
-                            <option value="" disabled selected>Choose an option</option>
-                            <option value="Under 18">Under 18</option>
-                            <option value="18 to 30">18 to 30</option>
-                            <option value="30 to 40">30 to 40</option>
-                            <option value="40 to 50">40 to 50</option>
-                            <option value="50 to 65">50 to 65</option>
-                            <option value="Over 65">Over 65</option>
-                        </select>
+                        <label class="form-label"><strong>What is your age group?</strong></label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="age" id="age-under-18" value="Under 18"
+                                required>
+                            <label for="age-under-18" class="form-check-label">Under 18</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="age" id="age-18-30" value="18-30"
+                                required>
+                            <label for="age-18-30" class="form-check-label">18-30</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="age" id="age-30-40" value="30-40"
+                                required>
+                            <label for="age-30-40" class="form-check-label">30-40</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="age" id="age-40-50" value="40-50"
+                                required>
+                            <label for="age-40-50" class="form-check-label">40-50</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="age" id="age-50-65" value="50-65"
+                                required>
+                            <label for="age-50-65" class="form-check-label">50-65</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="age" id="age-over-65" value="Over 65"
+                                required>
+                            <label for="age-over-65" class="form-check-label">Over 65</label>
+                        </div>
                     </div>
 
-                    <!-- Question 6 -->
 
+                    <!-- Question 6 -->
                     <div class="mb-3">
-                        <label class="form-label"><strong>6. How often do you experience breakouts?</strong></label>
+                        <label class="form-label"><strong>How often do you experience breakouts?</strong></label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" name="breakouts" id="often"
-                                value="Often" required>
+                            <input type="radio" class="form-check-input" name="breakouts" id="often" value="Often"
+                                required>
                             <label for="often" class="form-check-label">Often</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" name="breakouts" id="sometimes" value="Sometimes"
-                                required>
+                            <input type="radio" class="form-check-input" name="breakouts" id="sometimes"
+                                value="Sometimes" required>
                             <label for="sometimes" class="form-check-label">Sometimes</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" name="breakouts" id="rarely"
-                                value="Unsure" required>
+                            <input type="radio" class="form-check-input" name="breakouts" id="rarely" value="Unsure"
+                                required>
                             <label for="rarely" class="form-check-label">Rarely</label>
                         </div>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="breakouts" id="never" value="Never"
                                 required>
                             <label for="never" class="form-check-label">Never</label>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Are you or have you ever taken prescribed medications for
+                                your skin?</strong></label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="meds" id="meds-yes" value="Yes" required>
+                            <label for="meds-yes" class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="meds" id="meds-no" value="No" required>
+                            <label for="meds-no" class="form-check-label">No</label>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="mb-3">
+                        <label class="form-label"><strong>How much water do you drink daily?</strong></label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="water-intake" id="water-less-1"
+                                value="Less than 1 liter" required>
+                            <label for="water-less-1" class="form-check-label">Less than 1 liter</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="water-intake" id="water-1-2"
+                                value="1-2 liters" required>
+                            <label for="water-1-2" class="form-check-label">1-2 liters</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="water-intake" id="water-2-3"
+                                value="2-3 liters" required>
+                            <label for="water-2-3" class="form-check-label">2-3 liters</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="water-intake" id="water-more-3"
+                                value="More than 3 liters" required>
+                            <label for="water-more-3" class="form-check-label">More than 3 liters</label>
+                        </div>
+                    </div>
+
+
+                    <!-- Question 9 -->
+                    <div class="mb-3">
+                        <label class="form-label"><strong>What is your environment like?</strong></label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="environment" id="environment-dry"
+                                value="Dry climate" required>
+                            <label for="environment-dry" class="form-check-label">Dry climate</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="environment" id="environment-humid"
+                                value="Humid climate" required>
+                            <label for="environment-humid" class="form-check-label">Humid climate</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="environment" id="environment-neutral"
+                                value="Neutral" required>
+                            <label for="environment-neutral" class="form-check-label">Neutral</label>
+                        </div>
+                    </div>
+
+
+                    <!-- Question 10 -->
+                    <div class="mb-3">
+                        <label class="form-label"><strong>What time of day do you typically apply your skincare
+                                routine?</strong></label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="routine-time" id="routine-morning"
+                                value="Morning" required>
+                            <label for="routine-morning" class="form-check-label">Morning</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="routine-time" id="routine-night"
+                                value="Night" required>
+                            <label for="routine-night" class="form-check-label">Night</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="routine-time" id="routine-both"
+                                value="Both" required>
+                            <label for="routine-both" class="form-check-label">Both</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="routine-time" id="routine-none"
+                                value="I don't have a skincare routine" required>
+                            <label for="routine-none" class="form-check-label">I don't have a skincare routine</label>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="mb-3">
+                        <label class="form-label"><strong>How would you describe your diet?</strong></label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="diet" id="diet-balanced" value="Balanced"
+                                required>
+                            <label for="diet-balanced" class="form-check-label">Balanced</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="diet" id="diet-unhealthy"
+                                value="Unhealthy" required>
+                            <label for="diet-unhealthy" class="form-check-label">Unhealthy</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="diet" id="diet-vegetarian"
+                                value="Vegetarian" required>
+                            <label for="diet-vegetarian" class="form-check-label">Vegetarian</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="diet" id="diet-vegan" value="Vegan"
+                                required>
+                            <label for="diet-vegan" class="form-check-label">Vegan</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="diet" id="diet-other" value="Other"
+                                required>
+                            <label for="diet-other" class="form-check-label">Other</label>
+                        </div>
+                    </div>
+
+                    <!-- Question 12: Sleep -->
+                    <div class="mb-3">
+                        <label class="form-label"><strong>How many hours of sleep do you get each night?</strong></label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="sleep" id="sleep-less-6"
+                                value="Less than 6 hours" required>
+                            <label for="sleep-less-6" class="form-check-label">Less than 6 hours</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="sleep" id="sleep-6-8"
+                                value="6-8 hours" required>
+                            <label for="sleep-6-8" class="form-check-label">6-8 hours</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="sleep" id="sleep-more-8"
+                                value="More than 8 hours" required>
+                            <label for="sleep-more-8" class="form-check-label">More than 8 hours</label>
+                        </div>
+                    </div>
+
+                    <!-- Question 13: Pollution -->
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Do you live in an area with high levels of pollution?</strong></label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="pollution" id="pollution-yes"
+                                value="Yes" required>
+                            <label for="pollution-yes" class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="pollution" id="pollution-no"
+                                value="No" required>
+                            <label for="pollution-no" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="pollution" id="pollution-unsure"
+                                value="Unsure" required>
+                            <label for="pollution-unsure" class="form-check-label">Unsure</label>
                         </div>
                     </div>
                 </div>
