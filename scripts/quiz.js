@@ -44,11 +44,4 @@ window.onload = function () {
         const selectedOption = document.querySelector(`input[name="${groupName}"]:checked`);
         return selectedOption ? selectedOption.value : null;
     }
-
-    // Utility to get selected checkbox values
-    function getSelectedCheckboxes(groupName) {
-        return Array.from(document.querySelectorAll(`input[name="${groupName}"]:checked`)).map(
-            (checkbox) => checkbox.value
-        );
-    }
 };
