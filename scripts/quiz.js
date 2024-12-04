@@ -20,11 +20,12 @@ window.onload = function () {
         const quizResults = {
             name: name,
             skinType: getSelectedValue("skin-type"),
-            primaryConcern: getSelectedValue("primary-concern"),
+            primaryConcern: document.getElementById("primary-concern").value, // Handling select input directly
             sensitivity: getSelectedValue("sensitivity"),
             environment: getSelectedValue("environment"),
         };
 
+        // Ensure required fields are selected
         if (!quizResults.primaryConcern) {
             alert("Please select a primary skin concern.");
             return;
@@ -39,9 +40,20 @@ window.onload = function () {
         window.location.href = `results.html?${queryParams}`;
     });
 
-    // Utility to get selected radio button value
+    // Utility function to get selected value for radio or select inputs
     function getSelectedValue(groupName) {
-        const selectedOption = document.querySelector(`input[name="${groupName}"]:checked`);
-        return selectedOption ? selectedOption.value : null;
+        // Handle radio buttons
+        const inputElement = document.querySelector(`input[name="${groupName}"]:checked`);
+        if (inputElement) {
+            return inputElement.value;
+        }
+
+        // Handle select elements
+        const selectElement = document.getElementById(groupName);
+        if (selectElement) {
+            return selectElement.value !== "" ? selectElement.value : null;
+        }
+
+        return null; // No value selected
     }
 };

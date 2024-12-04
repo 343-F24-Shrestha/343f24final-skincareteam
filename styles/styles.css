@@ -43,6 +43,54 @@ img {
     font-size: 16px;
 }
 
+.amz-btn {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    width: 120px; /* Increased width for better visibility */
+    height: 50px;
+    font-family: Georgia, serif;
+    font-size: 14px; /* Slightly larger font */
+    text-align: center;
+    line-height: 50px;
+    display: block; /* Ensures alignment inside card */
+    margin: 10px auto; /* Center-align button */
+    transition: transform 0.2s ease-in-out, background-color 0.2s;
+}
+
+.amz-btn:hover {
+    background-color: #333333; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Card layout fixes */
+.card {
+    height: 100%; /* Uniform card height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Ensure images maintain aspect ratio and aren't stretched */
+.card-img-top {
+    width: 100%; /* Fill the card's width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Center and crop images if necessary */
+    max-height: 200px; /* Limit image height for consistency */
+}
+
+/* Adjust the card body for uniform spacing */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+}
+
 /* Buttons in Navbar */
 
 .teens,
