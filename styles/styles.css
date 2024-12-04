@@ -48,25 +48,30 @@ img {
     color: #FFFFFF;
     border: 1px solid #000000;
     border-radius: 25px;
-    width: 120px; /* Increased width for better visibility */
+    width: 120px;
+    /* Increased width for better visibility */
     height: 50px;
     font-family: Georgia, serif;
-    font-size: 14px; /* Slightly larger font */
+    font-size: 14px;
+    /* Slightly larger font */
     text-align: center;
     line-height: 50px;
-    display: block; 
-    margin: 10px auto; 
+    display: block;
+    margin: 10px auto;
     transition: transform 0.2s ease-in-out, background-color 0.2s;
 }
 
 .amz-btn:hover {
-    background-color: #333333; /* Darker shade on hover */
-    transform: scale(1.05); /* Slight zoom effect */
+    background-color: #333333;
+    /* Darker shade on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect */
 }
 
 /* Card layout fixes */
 .card {
-    height: 100%; /* Uniform card height */
+    height: 100%;
+    /* Uniform card height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -76,10 +81,10 @@ img {
 
 /* images maintain aspect ratio and aren't stretched */
 .card-img-top {
-    width: 100%; 
-    height: auto; 
-    object-fit: cover; 
-    max-height: 200px; 
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 200px;
 }
 
 /* Adjust the card body for uniform spacing */
@@ -124,11 +129,13 @@ img {
 
 /* Hover effect for start button */
 .start-btn:hover {
-    background-color: #388cdb; /* Darker shade on hover */
-    transform: scale(1.05); /* Slight zoom effect */
+    background-color: #388cdb;
+    /* Darker shade on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect */
 }
 
- .submit-btn{
+.submit-btn {
     background-color: #000000;
     color: #FFFFFF;
     border: 1px solid #000000;
@@ -138,11 +145,13 @@ img {
     font-family: Georgia, serif;
     font-size: 30px;
     margin: 20px auto;
- }
+}
 
- .submit-btn:hover {
-    background-color: #1f833d; /* Darker shade on hover */
-    transform: scale(1.05); /* Slight zoom effect */
+.submit-btn:hover {
+    background-color: #1f833d;
+    /* Darker shade on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect */
 }
 
 .product-image {
@@ -209,6 +218,7 @@ img {
     padding: 0;
     margin: 0;
 }
+
 .resource-box li {
     padding: 8px 0;
 }
@@ -228,9 +238,12 @@ img {
     h1 {
         font-size: 40px;
     }
-    .product-image:nth-child(1), .product-image:nth-child(4) {
+
+    .product-image:nth-child(1),
+    .product-image:nth-child(4) {
         display: none;
-    } 
+    }
+
     .resource-box {
         width: 60%;
     }
@@ -242,6 +255,7 @@ img {
     h1 {
         font-size: 35px;
     }
+
     .start-box {
         width: 90%;
         padding: 20px;
@@ -263,9 +277,11 @@ img {
         height: auto;
     }
 
-    .product-image:nth-child(1), .product-image:nth-child(2), .product-image:nth-child(4) {
+    .product-image:nth-child(1),
+    .product-image:nth-child(2),
+    .product-image:nth-child(4) {
         display: none;
-    } 
+    }
 
     .product-image {
         max-width: 300px;
@@ -278,9 +294,11 @@ img {
         min-height: 200px;
         border-radius: 20px;
     }
+
     .resource-box {
         width: 90%;
     }
+
     .start-btn {
         width: 90%;
     }
@@ -289,10 +307,11 @@ img {
 /* Teens and adults skin info box styling */
 
 .info-boxes {
-    background-color: #eeeeee;;
+    background-color: #eeeeee;
+    ;
     border: 1px solid #000000;
-    border-radius: 25px; 
-    padding: 25px; 
+    border-radius: 25px;
+    padding: 25px;
     margin: 15px;
     text-align: left;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -307,7 +326,7 @@ img {
 #dermatology-facts {
     background-color: #eeeeee;
     border: 1px solid #000000;
-    border-radius: 15px;
+    border-radius: 25px;
     padding: 20px;
     margin-top: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -348,15 +367,17 @@ img {
 
 /* Results page styles */
 #results {
-    background-color: #eeeeee;;
+    background-color: #eeeeee;
+    ;
     border: 1px solid #000000;
-    border-radius: 25px; 
-    padding: 25px; 
+    border-radius: 25px;
+    padding: 25px;
     margin: 15px;
     text-align: left;
 }
 
-#results h1, #results h2 {
+#results h1,
+#results h2 {
     text-align: center;
 }
 
