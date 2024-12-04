@@ -286,3 +286,22 @@ img {
 .info-boxes h1 {
     text-align: center;
 }
+
+/* Results page styles */
+#results {
+    background-color: #eeeeee;;
+    border: 1px solid #000000;
+    border-radius: 25px; 
+    padding: 25px; 
+    margin: 15px;
+    text-align: left;
+}
+
+#results h1, #results h2 {
+    text-align: center;
+}
+
+#results h2 {
+    margin-bottom: 35px;
+    font-size: 25px;
+}

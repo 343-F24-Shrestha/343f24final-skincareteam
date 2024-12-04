@@ -53,7 +53,7 @@
         const resultsDiv = document.getElementById("results");
         if (userName) {
             resultsDiv.innerHTML += `<h1>Hello, ${userName}!</h1>`;
-            resultsDiv.innerHTML += `<h2>Your Quiz Results:</h2>`;
+            resultsDiv.innerHTML += `<h2><strong>Your quiz results:</strong></h2>`;
             displayQuizQuestion1Results();
             displayQuizQuestion2Results();
             displayQuizQuestion3Results();
@@ -192,7 +192,7 @@
 
         // Function to fetch product recommendations from ASIN API
         async function fetchRecommendations(searchTerm) {
-            const apiKey = "DB4E5A4AAA024F44BEBAF9E24008CF54"; // Replace with ASIN API key
+            // const apiKey = "DB4E5A4AAA024F44BEBAF9E24008CF54"; // Replace with ASIN API key
             const url = `https://api.asindataapi.com/request?api_key=${apiKey}&type=search&amazon_domain=amazon.com&search_term=${encodeURIComponent(
                 searchTerm
             )}&sort_by=average_review`;
